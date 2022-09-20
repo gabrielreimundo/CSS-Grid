@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+        .header{
+            grid-area: header;
+        }
+        .principal{
+            grid-area: principal;
+        }
+        .lateral{
+            grid-area: lateral;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .conteiner{
+            display: grid;
+            grid-template-columns: auto auto auto auto; 
+            grid-template-rows: auto;
+            grid-template-areas: 
+                "header header header header"
+                "principal principal . lateral"
+                "footer footer footer footer"
+            ;
+        }
+        .item{
+            background-color: #048;
+            color: white;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .it1{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-column: 1/ span 2;
+            grid-row-start: 1;
+            grid-row-end:3;
+        }
+        .area {
+           grid-area:1 / 1 / 3/ 3 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="item header">CFB Cursos 1</div>
+        <div class="item principal">CFB Cursos 2</div>
+        <div class="item lateral">CFB Cursos 3</div>
+        <div class="item footer">CFB Cursos 4</div>
+    </div>
+</body>
+</html>
